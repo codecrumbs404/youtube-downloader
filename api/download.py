@@ -16,10 +16,12 @@ def handler(request):
         if choice == "1":  # Both video and audio
             ydl_opts['format'] = 'bestvideo+bestaudio/best'
             ydl_opts['merge_output_format'] = 'mp4'
+            print("Downloading best quality video and audio in MP4 format...")
 
         elif choice == "2":  # Video only
             ydl_opts['format'] = 'bestvideo/best'
             ydl_opts['merge_output_format'] = 'mp4'
+            print("Downloading best quality video in MP4 format...")
 
         elif choice == "3":  # Audio only
             ydl_opts['format'] = 'bestaudio/best'
@@ -29,6 +31,7 @@ def handler(request):
                 'preferredquality': '192',
             }]
             ydl_opts['extractaudio'] = True
+            print("Downloading best quality audio in MP3 format...")
 
         else:
             return json.dumps({"error": "Invalid choice. Exiting."})
