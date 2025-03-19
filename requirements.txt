@@ -1,2 +1,2 @@
-Flask
-yt-dlp
+yt-dlp==2023.3.19  # Or the latest version of yt-dlp
+Flask==2.2.2       # Flask is needed for Vercel to handle Python serverless functions
